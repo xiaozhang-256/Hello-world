@@ -1,0 +1,25 @@
+def check(x):
+    a = x
+    b = 2 * x
+    c = 3 * x
+    # 转字符串拼接
+    s = str(a) + str(b) + str(c)
+    # 长度必须是9，不能有0，数字集合等于{'1','2','3','4','5','6','7','8','9'}
+    if len(s) != 9:
+        return False
+    if '0' in s:
+        return False
+    return set(s) == {'1','2','3','4','5','6','7','8','9'}
+
+result = []
+# x是三位数，3*x <1000 → x <=333
+for x in range(100, 334):
+    if check(x):
+        result.append((x, 2*x, 3*x))
+
+for item in result:
+    a,b,c = item
+    int(a)
+    int(b) 
+    int(c)
+    print(a,b,c,sep=' ') 
